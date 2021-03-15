@@ -27,6 +27,9 @@ public class BinarySearch {
         int center;
         SearchResult result = new SearchResult();
 
+        if(seq.length==0)
+            throw new IllegalStateException("Empty sequence");
+
         while (start <= end) {
             center = (start + end) / 2;
             if (seq[center] == key) {

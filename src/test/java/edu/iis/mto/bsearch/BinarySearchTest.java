@@ -80,9 +80,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void passingEmptyTableShouldNotFind() {
-        searchResult = BinarySearch.search(-1, arrayOfZeroElements);
-        assertFalse(searchResult.isFound());
-        assertEquals(NOT_FOUND, searchResult.getPosition());
+    void passingEmptyTableShouldThrowAnException() {
+        assertThrows(IllegalStateException.class, () -> BinarySearch.search(10, arrayOfZeroElements));
     }
 }
