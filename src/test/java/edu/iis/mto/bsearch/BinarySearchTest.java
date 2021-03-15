@@ -22,7 +22,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void shouldNotFindInSequence() {
+    void shouldNotFindInOneElementSequence() {
         searchResult = BinarySearch.search(2, arrayOfOneElements);
         assertFalse(searchResult.isFound());
     }
@@ -43,5 +43,11 @@ class BinarySearchTest {
     void shouldBeTheMiddleElement() {
         searchResult = BinarySearch.search(3, arrayOfFiveElements);
         assertEquals(3, searchResult.getPosition());
+    }
+
+    @Test
+    void shouldNotFindInSequenceOfSeveralNumbers() {
+        searchResult = BinarySearch.search(10, arrayOfFiveElements);
+        assertFalse(searchResult.isFound());
     }
 }
