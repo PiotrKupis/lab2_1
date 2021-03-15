@@ -18,7 +18,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void shouldFindInSequence() {
+    void shouldFindInOneElementSequence() {
         int expectedPosition = 1;
 
         searchResult = BinarySearch.search(1, arrayOfOneElements);
