@@ -81,6 +81,6 @@ class BinarySearchTest {
 
     @Test
     void passingEmptyTableShouldThrowAnException() {
-        assertThrows(IllegalStateException.class, () -> BinarySearch.search(10, arrayOfZeroElements));
+        assertThrows(IllegalArgumentException.class, () -> BinarySearch.search(10, arrayOfZeroElements));
     }
 }
