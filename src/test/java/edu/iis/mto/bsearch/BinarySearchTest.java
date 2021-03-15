@@ -61,4 +61,10 @@ class BinarySearchTest {
     void passingNullShouldThrowAnException() {
         assertThrows(NullPointerException.class, ()->BinarySearch.search(10, null));
     }
+
+    @Test
+    void passingNegativeNumberShouldNotFind() {
+        searchResult = BinarySearch.search(-1, arrayOfFiveElements);
+        assertFalse(searchResult.isFound());
+    }
 }
