@@ -10,6 +10,7 @@ class BinarySearchTest {
     private SearchResult searchResult;
     private int[] arrayOfOneElements = new int[]{1};
     private int[] arrayOfFiveElements = new int[]{1, 2, 3, 4, 5};
+    private int[] arrayOfZeroElements = new int[]{};
 
     @BeforeEach
     void setUp() throws Exception {
@@ -65,6 +66,12 @@ class BinarySearchTest {
     @Test
     void passingNegativeNumberShouldNotFind() {
         searchResult = BinarySearch.search(-1, arrayOfFiveElements);
+        assertFalse(searchResult.isFound());
+    }
+
+    @Test
+    void passingEmptyTableShouldNotFind() {
+        searchResult = BinarySearch.search(-1, arrayOfZeroElements);
         assertFalse(searchResult.isFound());
     }
 }
