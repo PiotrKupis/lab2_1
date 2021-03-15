@@ -29,20 +29,26 @@ class BinarySearchTest {
 
     @Test
     void shouldBeTheFirstElement() {
+        int expectedPosition = 1;
+
         searchResult = BinarySearch.search(1, arrayOfFiveElements);
-        assertEquals(1, searchResult.getPosition());
+        assertEquals(expectedPosition, searchResult.getPosition());
     }
 
     @Test
     void shouldBeTheLastElement() {
+        int expectedPosition = arrayOfFiveElements.length;
+
         searchResult = BinarySearch.search(5, arrayOfFiveElements);
-        assertEquals(arrayOfFiveElements.length, searchResult.getPosition());
+        assertEquals(expectedPosition, searchResult.getPosition());
     }
 
     @Test
     void shouldBeTheMiddleElement() {
+        int expectedPosition = 3;
+
         searchResult = BinarySearch.search(3, arrayOfFiveElements);
-        assertEquals(3, searchResult.getPosition());
+        assertEquals(expectedPosition, searchResult.getPosition());
     }
 
     @Test
