@@ -56,4 +56,9 @@ class BinarySearchTest {
         searchResult = BinarySearch.search(10, arrayOfFiveElements);
         assertFalse(searchResult.isFound());
     }
+
+    @Test
+    void passingNullShouldThrowAnException() {
+        assertThrows(NullPointerException.class, ()->BinarySearch.search(10, null));
+    }
 }
