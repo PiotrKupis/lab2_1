@@ -3,6 +3,9 @@ package edu.iis.mto.bsearch;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 class BinarySearchTest {
 
     SearchResult searchResult;
@@ -14,7 +17,12 @@ class BinarySearchTest {
     @Test
     void shouldFindInSequence() {
         searchResult = BinarySearch.search(1, new int[]{1});
-        assert searchResult.isFound();
+        assertTrue(searchResult.isFound());
     }
 
+    @Test
+    void shouldNotFindInSequence() {
+        searchResult = BinarySearch.search(2, new int[]{1});
+        assertFalse(searchResult.isFound());
+    }
 }
